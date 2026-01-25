@@ -1,0 +1,17 @@
+# wrangler.toml (sample)
+name = "secure-entry-d1"
+main = "worker.js"
+compatibility_date = "2025-12-15"
+
+[vars]
+APPS_SCRIPT_URL = "https://script.google.com/macros/s/XXXX/exec"
+RETENTION_DAYS = "120"
+PURGE_BATCH = "50"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "secure_entry_db"
+database_id = "YOUR_D1_ID"
+
+[triggers]
+crons = ["15 3 * * *"] # daily 03:15
