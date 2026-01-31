@@ -49,3 +49,13 @@ CREATE INDEX IF NOT EXISTS idx_entries_id_norm_proof
 -- cleanup retention
 CREATE INDEX IF NOT EXISTS idx_entries_created_at
   ON entries(created_at);
+
+===================================
+CREATE INDEX IF NOT EXISTS idx_entries_reg_created ON entries(reg_norm, created_at);
+CREATE INDEX IF NOT EXISTS idx_entries_id_created  ON entries(id_norm, created_at);
+
+-- untuk proof lookup (drive_url)
+CREATE INDEX IF NOT EXISTS idx_entries_reg_drive_created ON entries(reg_norm, drive_url, created_at);
+CREATE INDEX IF NOT EXISTS idx_entries_id_drive_created  ON entries(id_norm, drive_url, created_at);
+
+
