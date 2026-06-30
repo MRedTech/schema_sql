@@ -1,0 +1,233 @@
+SECURE ENTRY - SQL SEMAK SYNC STATUS (7 SITE)
+Prepared for Edos
+
+NOTA:
+- Jalankan SQL ini dalam D1 database site masing-masing.
+- Table name kekal: entries
+- Tarikh dalam WHERE adalah UTC.
+- Bacaan:
+  DONE | 1       = terbaik, sync berjaya first try
+  DONE | 2/3/4   = normal, retry berjaya
+  PENDING/FAILED = perlu semak detail error
+
+
+==================================================
+1) SENSORY
+SYNC_RETRY_START_AT = 2026-05-25T19:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-05-25T19:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-05-25T19:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-05-25T19:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+2) CERRADO
+SYNC_RETRY_START_AT = 2026-06-11T16:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-06-11T16:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-06-11T16:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-06-11T16:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+3) M LUNA
+SYNC_RETRY_START_AT = 2026-06-12T00:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-06-12T00:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-06-12T00:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-06-12T00:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+4) M ADORA
+SYNC_RETRY_START_AT = 2026-06-26T16:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+5) M ASTRA
+SYNC_RETRY_START_AT = 2026-06-30T16:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-06-30T16:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-06-30T16:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-06-30T16:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+6) M ARISA
+SYNC_RETRY_START_AT = 2026-06-26T16:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+7) M PANORA
+SYNC_RETRY_START_AT = 2026-06-26T16:00:00.000Z
+==================================================
+
+-- Summary status
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+-- Detail latest records
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- Problems only
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= '2026-06-26T16:00:00.000Z'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
+
+
+==================================================
+GENERIC TEMPLATE FOR ANY SITE
+==================================================
+
+-- Replace START_UTC with that site's SYNC_RETRY_START_AT value
+
+SELECT sync_status, sync_attempts, COUNT(*) AS total
+FROM entries
+WHERE created_at >= 'START_UTC'
+GROUP BY sync_status, sync_attempts
+ORDER BY sync_status, sync_attempts;
+
+SELECT id, created_at, sync_status, sync_attempts, sync_error, drive_url
+FROM entries
+WHERE created_at >= 'START_UTC'
+ORDER BY created_at DESC
+LIMIT 20;
+
+SELECT id, created_at, sync_status, sync_attempts, sync_error
+FROM entries
+WHERE created_at >= 'START_UTC'
+  AND sync_status IN ('PENDING', 'FAILED')
+ORDER BY created_at DESC
+LIMIT 50;
